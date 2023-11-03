@@ -42,7 +42,7 @@ git clone https://github.com/Punk1776/not-social
 
 
 
-git clone https://github.com/Punk1776/not-social
+
 
 Install the required dependencies.
 
