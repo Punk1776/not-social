@@ -35,6 +35,7 @@ Not Social is a social platform where users can share their thoughts (formerly k
 
 1. Clone this repository to your local machine.
 
+[Uploading Untitled_ Nov 3 2023 3_11 PM.webm…]()
 
 git clone https://github.com/yourusername/your-app-name.git
 
