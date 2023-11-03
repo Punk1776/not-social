@@ -1,0 +1,25 @@
+{
+    "name": "not-social",
+    "version": "1.0.0",
+    "description": "## Table of Contents",
+    "main": "server.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1",
+      "start": "node server.js"
+    },
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/Punk1776/not-social"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+      "url": "https://github.com/Punk1776/not-social"
+    },
+    "homepage": "https://github.com/Punk1776/not-social",
+    "dependencies": {
+      "express": "^4.17.3",
+      "mongoose": "^6.0.4"
+    }
+  }
