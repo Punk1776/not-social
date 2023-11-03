@@ -1,4 +1,4 @@
-const { User, Thought } = require("../models");
+const { User, Post } = require("../models");
 
 const userController = {
   // get all users
@@ -21,7 +21,7 @@ const userController = {
   getUserById({ params }, res) {
     User.findOne({ _id: params.id })
       .populate({
-        path: "thoughts",
+        path: "posts",
         select: "-__v",
       })
       .populate({
@@ -73,11 +73,11 @@ const userController = {
         if (!dbUserData) {
           return res.status(404).json({ message: "No user with this id!" });
         }
-        // BONUS: get ids of user's `thoughts` and delete them all
+        // BONUS: get ids of user's `posts` and delete them all
         // $in to find specific things
-        return Thought.deleteMany({ _id: { $in: dbUserData.thoughts } });
+        return Post.deleteMany({ _id: { $in: dbUserData.posts } });
       })
-      .then(() => { res.json({ message: "User and associated msg deleted!" });
+      .then(() => { res.json({ message: "User and associated posts deleted!" });
       })
       .catch((err) => res.json(err));
   },
@@ -116,4 +116,5 @@ const userController = {
       .catch((err) => res.json(err));
   },
 };
+
 module.exports = userController;

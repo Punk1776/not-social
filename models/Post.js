@@ -20,9 +20,9 @@ const ReactionSchema = new Schema(
       type: String,
       required: true,
     },
- createdAt: {
+    createdAt: {
       type: Date,
-      
+
       default: Date.now,
       // Use a getter method to format the timestamp on query
       get: (timestamp) => dateFormat(timestamp),
@@ -36,9 +36,9 @@ const ReactionSchema = new Schema(
   }
 );
 
-const ThoughtSchema = new Schema(
+const PostSchema = new Schema(
   {
-    thoughtText: {
+    postText: {
       type: String,
       required: "post is Required",
       minlength: 1,
@@ -69,10 +69,10 @@ const ThoughtSchema = new Schema(
   }
 );
 
-ThoughtSchema.virtual("reactionCount").get(function () {
+PostSchema.virtual("reactionCount").get(function () {
   return this.reactions.length;
 });
 
-const Thought = model("Thought", ThoughtSchema);
+const Post = model("Post", PostSchema);
 
-module.exports = Thought;
+module.exports = Post;
